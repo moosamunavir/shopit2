@@ -1,15 +1,26 @@
 import express from "express";
-import { isAuthendicatedUser } from "../middleWares/auth.js";
-import { getOrderDetails, myOrders, newOrder } from "../controllers/orderControllers.js";
+import { authorizeRoles, isAuthendicatedUser } from "../middleWares/auth.js";
+import {
+  allOrders,
+  deleteOrder,
+  getOrderDetails,
+  myOrders,
+  newOrder,
+  updateOrders,
+} from "../controllers/orderControllers.js";
 const router = express.Router();
 
-
-
-
-router.route("/order/new").post(isAuthendicatedUser, newOrder);
-router.route("/order/:id").get(isAuthendicatedUser, getOrderDetails);
+router.route("/orders/new").post(isAuthendicatedUser, newOrder);
+router.route("/orders/:id").get(isAuthendicatedUser, getOrderDetails);
 router.route("/me/orders").get(isAuthendicatedUser, myOrders);
 
+router
+  .route("/admin/orders")
+  .get(isAuthendicatedUser, authorizeRoles("admin"), allOrders);
 
+router
+  .route("/admin/orders/:id")
+  .put(isAuthendicatedUser, authorizeRoles("admin"), updateOrders)
+  .delete(isAuthendicatedUser, authorizeRoles("admin"), deleteOrder);
 
 export default router;
