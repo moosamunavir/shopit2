@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import { connectDatabase } from "./config/dbConnect.js";
 import errorMiddleware from "./middleWares/error.js";
-dotenv.config({ path: `backend/config/config.env` });
 
 // handle uncaught excemptions errors
 
@@ -13,6 +12,8 @@ process.on("uncaugthExcemption", (err) => {
   console.log("Shutting down server due to uncaught excemption");
   process.exit(1);
 });
+
+dotenv.config({ path: `backend/config/config.env` });
 
 // connecting to database
 
@@ -23,8 +24,6 @@ app.use(
     limit: "10mb",
     verify: (req, res, buf) => {
       req.rawBody = buf.toString();
-      
-      
     },
   })
 );
