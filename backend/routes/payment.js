@@ -12,7 +12,7 @@ router
   .post(isAuthendicatedUser, stripeCheckoutSession);
 
 
-router.route("/payment/webhook").post(stripeWebhook);
+router.route("/payment/webhook").post( stripeWebhook);
 
 
 export default router;

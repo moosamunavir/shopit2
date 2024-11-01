@@ -1,8 +1,13 @@
 import express from "express";
 import {
+  canUserReview,
+  createProductReview,
   deleteProduct,
+  deleteProductImage,
+  deleteReview,
   getAdminProducts,
   getProductDetails,
+  getProductRiviews,
   getProducts,
   newProduct,
   updateProduct,
@@ -21,7 +26,11 @@ router.route("/products/:id").get(getProductDetails);
 
 router
   .route("/admin/products/:id/upload_images")
-  .put(isAuthendicatedUser, authorizeRoles("admin"), uploadProductImages)
+  .put(isAuthendicatedUser, authorizeRoles("admin"), uploadProductImages);
+
+router
+  .route("/admin/products/:id/delete_images")
+  .put(isAuthendicatedUser, authorizeRoles("admin"), deleteProductImage);
 
 router
   .route("/admin/products/:id")
@@ -30,5 +39,16 @@ router
 router
   .route("/admin/products/:id")
   .delete(isAuthendicatedUser, authorizeRoles("admin"), deleteProduct);
+
+router
+  .route("/reviews")
+  .get(isAuthendicatedUser, getProductRiviews)
+  .put(isAuthendicatedUser, createProductReview);
+
+router
+  .route("/admin/reviews")
+  .delete(isAuthendicatedUser, authorizeRoles("admin"), deleteReview);
+
+router.route("/can_review").get(isAuthendicatedUser, canUserReview);
 
 export default router;

@@ -62,8 +62,8 @@ export const uploadAvatar = catchAsyncErrors(async (req, res, next) => {
   const avatarResponse = await upload_file(req.body.avatar, "shopit/avatars");
 
   // remove previous avatar
-  if(req?.user?.avatar?.url){
-    await delete_file(req?.user?.avatar?.public_id)
+  if (req?.user?.avatar?.url) {
+    await delete_file(req?.user?.avatar?.public_id);
   }
 
   const user = await User.findByIdAndUpdate(req?.user?._id, {
@@ -170,11 +170,10 @@ export const updatePassword = catchAsyncErrors(async (req, res, next) => {
     return next(new ErrorHandler("old password is incorrect", 400));
   }
 
-  console.log('===========');
-console.log(req.body.oldPassword);
-console.log(req.body.password);
-console.log('==============');
-
+  console.log("===========");
+  console.log(req.body.oldPassword);
+  console.log(req.body.password);
+  console.log("==============");
 
   user.password = req.body.password;
   user.save();
@@ -255,9 +254,13 @@ export const delateUser = catchAsyncErrors(async (req, res, next) => {
     );
   }
 
+  
+
   // TODO - Remove avatar from cloudinary
 
-  // later -----------------
+  if (user?.avatar?.public_id) {
+    await delete_file(user?.avatar?.public_id);
+  }
 
   await user.deleteOne();
 
