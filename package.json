@@ -1,0 +1,31 @@
+{
+  "name": "shopit2",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node backend/app.js",
+    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/app.js",
+    "PROD": "SET NODE_ENV=PRODUCTION& nodemon backend/app.js",
+    "seeder": "node backend/seeder/seeder.js"
+  },
+  "author": "moosamunavir",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cloudinary": "^2.5.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1",
+    "nodemailer": "^6.9.16",
+    "stripe": "^17.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
