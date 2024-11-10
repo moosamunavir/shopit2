@@ -49,7 +49,7 @@ const Home = () => {
             <Filters />
           </div>
         )}
-        <div className={keyword ? "col-12 col-md-9" : "col-12"}>
+        <div className={keyword ? "col-12 col-md-9" : " col-md-12"}>
           <h1 id="products_heading" className="text-secondary">
             {keyword
               ? `${data?.products?.length} products found with keyword: ${keyword}`
