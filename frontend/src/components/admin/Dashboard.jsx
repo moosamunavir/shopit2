@@ -25,7 +25,7 @@ const Dashboard = () => {
         endDate: endDate.toISOString(),
       });
     }
-  }, [error]);
+  }, [error,startDate,endDate,data,getDashboardSales,]);
 
   const submitHandler = () => {
     // console.log(new Date(startDate).toISOString());

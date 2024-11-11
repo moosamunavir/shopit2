@@ -27,7 +27,7 @@ const UploadAvatar = () => {
       toast.success("Avatar Uploading");
       navigate("/me/profile");
     }
-  }, [error, isSuccess]);
+  }, [error, isSuccess,navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -68,7 +68,7 @@ const UploadAvatar = () => {
                       <img
                         src={avatarPreview}
                         className="rounded-circle"
-                        alt="image"
+                        alt="image1"
                       />
                     </figure>
                   </div>

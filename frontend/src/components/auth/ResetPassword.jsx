@@ -27,7 +27,7 @@ const ResetPassword = () => {
       toast.success("Password updated successfully");
       navigate("/login");
     }
-  }, [error, isAuthenticated, isSuccess]);
+  }, [error, isAuthenticated, isSuccess,navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();

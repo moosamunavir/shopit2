@@ -34,7 +34,7 @@ const Home = () => {
     if (isError) {
       toast.error(error?.data?.message);
     }
-  }, [isError]);
+  }, [isError,error?.data?.message]);
 
   const columnSize = keyword ? 4 : 3;
 
@@ -45,11 +45,11 @@ const Home = () => {
       <MetaData title={`Bay best products online`} />
       <div className="row">
         {keyword && (
-          <div className="col-12 col-md-3 mt-5">
+          <div className="col-12 col-sm-6 col-md-3 mt-5">
             <Filters />
           </div>
         )}
-        <div className={keyword ? "col-12 col-md-9" : " col-md-12"}>
+        <div className={keyword ? "col-12 col-sm-6 col-md-3" : "col-12 col-md-12"}>
           <h1 id="products_heading" className="text-secondary">
             {keyword
               ? `${data?.products?.length} products found with keyword: ${keyword}`

@@ -50,7 +50,7 @@ const UpdateProduct = () => {
       toast.success("Product Updataed");
       navigate("/admin/products");
     }
-  }, [error, isSuccess, data]);
+  }, [error, isSuccess, data,navigate]);
 
   const onChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });

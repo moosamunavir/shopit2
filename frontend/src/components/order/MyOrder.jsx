@@ -28,7 +28,7 @@ const MyOrders = () => {
       dispatch(clearCart());
       navigate("/me/orders");
     }
-  }, [error, orderSuccess]);
+  }, [error, orderSuccess,dispatch,navigate]);
 
   const setOrders = () => {
     const orders = {

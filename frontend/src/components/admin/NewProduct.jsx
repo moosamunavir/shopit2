@@ -34,7 +34,7 @@ const NewProduct = () => {
       toast.success("Product created");
       navigate("/admin/products");
     }
-  }, [error, isSuccess]);
+  }, [error, isSuccess,navigate]);
 
   const onChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });

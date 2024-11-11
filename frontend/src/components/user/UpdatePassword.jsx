@@ -21,7 +21,7 @@ const UpdatePassword = () => {
       toast.success("Password Updated");
       navigate("/me/profile");
     }
-  }, [error, isSuccess]);
+  }, [error, isSuccess,navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();

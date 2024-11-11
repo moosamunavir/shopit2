@@ -72,7 +72,7 @@ const ProductDetails = () => {
 
   if (isLoading) return <Loader />;
 
-  if (error && error.status == 404) {
+  if (error && error.status === 404) {
     return <NotFount />;
   }
 

@@ -15,7 +15,7 @@ const Register = () => {
 
   const { name, email, password } = user;
   const navigate = useNavigate();
-  const [register, { isloading, error, data }] = useRegisterMutation();
+  const [register, { isloading, error }] = useRegisterMutation();
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Register = () => {
     if (error) {
       toast.error(error?.data?.message);
     }
-  }, [error, isAuthenticated]);
+  }, [error, isAuthenticated,navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();
