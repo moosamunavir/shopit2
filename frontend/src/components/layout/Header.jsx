@@ -7,31 +7,32 @@ import { useLazyLogoutQuery } from "../../redux/api/authApi";
 
 const Header = () => {
   const navigate = useNavigate();
+
   const { isLoading } = useGetMeQuery();
   const [logout] = useLazyLogoutQuery();
 
   const { user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
 
-  const logoutHandler = async () => {
-    await logout();
+  const logoutHandler = () => {
+    logout();
     navigate(0);
   };
 
   return (
     <nav className="navbar row">
-      <div className="col-12 col-md-3 ps-5">
+      <div className="col-12 col-md-3 ps-5 navbardiv">
         <div className="navbar-brand">
           <a href="/">
             <img src="/images/shopit_logo.png" alt="ShopIT Logo" />
           </a>
         </div>
       </div>
-      <div className="col-12 col-md-6 mt-2 mt-md-0">
-        {/* search form cutted */}
+      <div className="col-12 col-md-6 mt-2 mt-md-0 searchdiv">
         <Search />
       </div>
-      <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+
+      <div className="col-12 col-md-3 mt-md-0 text-center cartdiv">
         <a href="/cart" style={{ textDecoration: "none" }}>
           <span id="cart" className="ms-3">
             {" "}
@@ -42,6 +43,7 @@ const Header = () => {
           </span>
         </a>
 
+     
         {user ? (
           <div className="ms-4 dropdown">
             <button
@@ -62,7 +64,7 @@ const Header = () => {
                   className="rounded-circle"
                 />
               </figure>
-              <span>{user?.name}</span>
+              <span className="userperu">{user?.name}</span>
             </button>
             <div
               className="dropdown-menu w-100"
@@ -96,12 +98,13 @@ const Header = () => {
           </div>
         ) : (
           !isLoading && (
-            <Link to="/login" className="btn ms-3" id="login_btn">
+            <Link to="/login" className="btn ms-4" id="login_btn">
               {" "}
               Login{" "}
             </Link>
           )
         )}
+        
       </div>
     </nav>
   );

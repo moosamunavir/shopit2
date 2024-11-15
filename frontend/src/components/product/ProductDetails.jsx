@@ -12,6 +12,7 @@ import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
 import NotFount from "../layout/NotFount";
 
+
 const ProductDetails = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -80,11 +81,11 @@ const ProductDetails = () => {
   return (
     <>
       <MetaData title={`${product?.name} Details`} />
-      <div className="row d-flex justify-content-around">
+      <div className="row d-flex justify-content-around pt-1">
         <div className="col-12 col-lg-5 img-fluid" id="product_image">
           <div className="p-3">
             <img
-              className="d-block w-100"
+              className="d-block w-100 imgdcut"
               src={activeImg}
               alt={product?.name}
               width="340"

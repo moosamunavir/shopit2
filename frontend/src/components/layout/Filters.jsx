@@ -63,7 +63,7 @@ const Filters = () => {
   };
 
   return (
-    <div className="border p-3 filter">
+    <div className="border filter">
       <h3>Filters</h3>
       <hr />
       <h5 className="filter-heading mb-3">Price</h5>

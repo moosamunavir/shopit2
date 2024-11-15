@@ -1,5 +1,3 @@
-/* 64 */
-
 html,
 body {
   font-family: "Amazon Ember";
@@ -8,12 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background-color: #aef599;
-}
-
-#mine{
-  background-color: rgb(211, 252, 158);
-  border-radius: 20px;
+  scroll-behavior: smooth;
 }
 
 /* Scroll Bar */
@@ -41,7 +34,9 @@ nav {
 
 .navbar {
   padding: 0.1rem 1rem;
-
+  position: sticky;
+  z-index: 1000;
+  top: 0;
 }
 
 .dropdown {
@@ -67,8 +62,8 @@ nav {
 #login_btn,
 #view_btn,
 #new_review_btn {
-  background-color: #fa23b2;
-  /* padding: 0.4rem 1.8rem; */
+  background-color: #fa9c23;
+  padding: 0.4rem 1.8rem;
   color: white;
 }
 
@@ -87,9 +82,6 @@ nav {
 }
 
 /* Home page */
-
-
-
 #products_heading {
   margin-top: 1.8rem;
 }
@@ -184,7 +176,7 @@ footer {
 }
 
 #product_image {
-  margin-top: 9rem;
+  margin-top: 1rem;
 }
 
 /* Loader */
@@ -243,7 +235,7 @@ footer {
 }
 
 #checkout_btn,
-.review-  {
+.review-btn {
   background-color: #fa9c23;
   border-color: #fa9c23;
   margin-top: 2rem;
@@ -294,25 +286,25 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 5rem;
 
   font-weight: 700;
 }
 
 .wrapper form {
-  padding: 1.5rem 3rem;
+  padding: 2.5rem 3rem;
 }
 
 .wrapper form .btn,
 .fetch-btn {
-  background-color: #fa23b2;
-  border-color: #fa23b2;
+  background-color: #fa9c23;
+  border-color: #fa9c23;
   color: white;
   margin-top: 1rem;
 }
 
 .fetch-btn:hover {
-  background-color: #fa23b2;
+  background-color: #fa9c23;
   color: white;
 }
 
@@ -555,7 +547,7 @@ footer {
 }
 
 .filter {
-  margin-top: 5.8rem;
+  margin-top: 1rem;
 }
 
 /* Sidebar */
@@ -575,3 +567,76 @@ footer {
   border-radius: 0.3rem;
   color: #fa9c23;
 }
+
+
+
+
+
+/* my own css for resp */
+
+
+
+
+
+@media (min-width: 768px) {
+  .searchdivsecond {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content:space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+  }
+  .navbardiv {
+    order: 1;
+    width: 85px;
+    padding: 0px 10px 0px 10px;
+    margin : 0px 10px 0px -40px;
+  }
+  .navbar-brand {
+    width: 55px;
+    
+  }
+  .navbar-brand img{
+    width: 95px;
+    height: 50px;
+  }
+  .searchdiv {
+    display: none;
+  }
+
+  .cartdiv {
+    order: 3;
+    width: 178px;
+    height: 30px;
+    margin-top: 5px;
+  }
+  .dropdown {
+    order: 4;
+  }
+  #cart {
+    display: none;
+  }
+  #login-btn {
+    order: 4;
+  }
+  .dropdown {
+    order: 5;
+    width: 30px;
+  }
+  .userperu {
+    display: none;
+  }
+  .imgdcut {
+    width: 140px;
+    height: 250px;
+  }
+ 
+}
+
+

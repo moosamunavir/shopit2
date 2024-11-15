@@ -6,6 +6,7 @@ import StarRatings from "react-star-ratings";
 const productItem = ({ product, columnSize }) => {
   return (
     <>
+    
     <div className={`col-12 col-md-6 col-lg-${columnSize} my-3`}>
       <div className="card p-3 rounded">
         <img
