@@ -6,7 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  background-color: #17f3e1e1;
 }
 
 /* Scroll Bar */
@@ -34,9 +34,6 @@ nav {
 
 .navbar {
   padding: 0.1rem 1rem;
-  position: sticky;
-  z-index: 1000;
-  top: 0;
 }
 
 .dropdown {
@@ -83,7 +80,7 @@ nav {
 
 /* Home page */
 #products_heading {
-  margin-top: 1.8rem;
+  margin-top: 0.8rem;
 }
 
 .card {
@@ -168,15 +165,16 @@ footer {
 }
 
 .redColor {
-  color: red;
+  color: red !important;
 }
 
 .greenColor {
-  color: green;
+  color: green !important;
 }
 
 #product_image {
-  margin-top: 1rem;
+  margin-top: 1.9rem;
+  border-radius: 10px;
 }
 
 /* Loader */
@@ -547,7 +545,7 @@ footer {
 }
 
 .filter {
-  margin-top: 1rem;
+  margin-top: 5.8rem;
 }
 
 /* Sidebar */
@@ -571,72 +569,79 @@ footer {
 
 
 
+/*   my cssssssss   */  
 
-/* my own css for resp */
-
-
-
-
-
-@media (min-width: 768px) {
-  .searchdivsecond {
+@media (min-width: 992px) {
+  .faIcon {
     display: none;
   }
 }
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    justify-content:space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 
+@media ( max-width: 768px ) {
+
+  nav{
+    background-color: #68363b;
   }
-  .navbardiv {
-    order: 1;
-    width: 85px;
-    padding: 0px 10px 0px 10px;
-    margin : 0px 10px 0px -40px;
+  .navbar {
+    padding-left: 1px;
+    padding-top: 0px ;
   }
-  .navbar-brand {
-    width: 55px;
-    
-  }
-  .navbar-brand img{
-    width: 95px;
-    height: 50px;
-  }
-  .searchdiv {
+  .input-group {
     display: none;
   }
-
-  .cartdiv {
-    order: 3;
-    width: 178px;
-    height: 30px;
-    margin-top: 5px;
+  .navbar-brand {
+    width: 99%;
+  
   }
-  .dropdown {
-    order: 4;
+  .logoPic {
+    height: 30px;
+  }
+  .topdiv {
+    width: 30%;
+    margin-top: 15px;
+  }
+  .searchDiv {
+    display: none;
+  }
+  .cartDiv {
+    display: none; 
   }
   #cart {
     display: none;
   }
-  #login-btn {
-    order: 4;
-  }
-  .dropdown {
-    order: 5;
-    width: 30px;
-  }
-  .userperu {
+  #userFullName {
     display: none;
   }
-  .imgdcut {
-    width: 140px;
-    height: 250px;
+  .avatar {
+    display: none;
   }
- 
+  .cartMaincart {
+    width: 180px;
+  }
+  .dropdown-toggle {
+    border: 1px solid white;
+
+  }
+  #product_image {
+    margin-top: .9rem;
+  }
+  .pImg {
+    width: 100px;
+    height: 200px;
+    border-radius: 10px;
+  }
+  .pImgAll {
+    margin-top: 14px;
+  }
+  .sImg {
+    width: 70px;
+    height: 70px;
+  }
+  #cart_btn {
+    width: 122px;
+    height: 35px;
+    font-size: 11px;
+  }
+
+
 }
-
-

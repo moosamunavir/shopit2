@@ -21,19 +21,18 @@ const Header = () => {
 
   return (
     <nav className="navbar row">
-      <div className="col-12 col-md-3 ps-5 navbardiv">
+      <div className="col-12 col-md-3 ps-5 topdiv">
         <div className="navbar-brand">
           <a href="/">
-            <img src="/images/shopit_logo.png" alt="ShopIT Logo" />
+            <img className="logoPic" src="/images/shopit_logo.png" alt="ShopIT Logo" />
           </a>
         </div>
       </div>
-      <div className="col-12 col-md-6 mt-2 mt-md-0 searchdiv">
+      <div className="col-12 col-md-6 mt-2 mt-md-0 searchDiv">
         <Search />
       </div>
-
-      <div className="col-12 col-md-3 mt-md-0 text-center cartdiv">
-        <a href="/cart" style={{ textDecoration: "none" }}>
+      <div className="col-12 col-md-3 mt-2 mt-md-0 text-center cartMaincart">
+        <a className="cartDiv" href="/cart" style={{ textDecoration: "none" }}>
           <span id="cart" className="ms-3">
             {" "}
             Cart{" "}
@@ -43,9 +42,8 @@ const Header = () => {
           </span>
         </a>
 
-     
         {user ? (
-          <div className="ms-4 dropdown">
+          <div className="ms-3 dropdown">
             <button
               className="btn dropdown-toggle text-white"
               type="button"
@@ -64,7 +62,7 @@ const Header = () => {
                   className="rounded-circle"
                 />
               </figure>
-              <span className="userperu">{user?.name}</span>
+              <span id="userFullName">{user?.name}</span>
             </button>
             <div
               className="dropdown-menu w-100"
@@ -86,6 +84,11 @@ const Header = () => {
                 {" "}
                 Profile{" "}
               </Link>
+              <Link className="dropdown-item" to="/cart">
+                {" "}
+                Cart{" "}
+              </Link>
+
 
               <Link
                 className="dropdown-item text-danger"
@@ -104,7 +107,6 @@ const Header = () => {
             </Link>
           )
         )}
-        
       </div>
     </nav>
   );

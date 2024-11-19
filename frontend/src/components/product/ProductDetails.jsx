@@ -83,21 +83,21 @@ const ProductDetails = () => {
       <MetaData title={`${product?.name} Details`} />
       <div className="row d-flex justify-content-around pt-1">
         <div className="col-12 col-lg-5 img-fluid" id="product_image">
-          <div className="p-3">
+          <div className="p-1">
             <img
-              className="d-block w-100 imgdcut"
+              className="d-block w-100 pImg"
               src={activeImg}
               alt={product?.name}
               width="340"
               height="390"
             />
           </div>
-          <div className="row justify-content-start mt-5">
+          <div className="row justify-content-start  pImgAll">
             {product?.images?.map((img) => (
               <div className="col-2 ms-4 mt-2">
                 <a role="button">
                   <img
-                    className={`d-block border rounded p-3 cursor-pointer ${
+                    className={`d-block border sImg rounded p-3 cursor-pointer ${
                       img.url === activeImg ? "border-warning" : ""
                     } `}
                     height="100"
@@ -112,7 +112,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        <div className="col-12 col-lg-5 mt-5">
+        <div className="col-12 col-lg-5 mt-3">
           <h3>{product?.name}</h3>
           <p id="product_id">Product # {product?._id}</p>
 
