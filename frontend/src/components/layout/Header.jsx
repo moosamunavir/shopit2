@@ -31,6 +31,9 @@ const Header = () => {
       <div className="col-12 col-md-6 mt-2 mt-md-0 searchDiv">
         <Search />
       </div>
+
+    
+
       <div className="col-12 col-md-3 mt-2 mt-md-0 text-center cartMaincart">
         <a className="cartDiv" href="/cart" style={{ textDecoration: "none" }}>
           <span id="cart" className="ms-3">
@@ -43,7 +46,7 @@ const Header = () => {
         </a>
 
         {user ? (
-          <div className="ms-3 dropdown">
+          <div className="ms-1 dropdown">
             <button
               className="btn dropdown-toggle text-white"
               type="button"
@@ -65,7 +68,7 @@ const Header = () => {
               <span id="userFullName">{user?.name}</span>
             </button>
             <div
-              className="dropdown-menu w-100"
+              className="dropdown-menu w-100 dropD"
               aria-labelledby="dropDownMenuButton"
             >
               {user?.role === "admin" && (
@@ -84,12 +87,6 @@ const Header = () => {
                 {" "}
                 Profile{" "}
               </Link>
-              <Link className="dropdown-item" to="/cart">
-                {" "}
-                Cart{" "}
-              </Link>
-
-
               <Link
                 className="dropdown-item text-danger"
                 to="/"
@@ -107,7 +104,9 @@ const Header = () => {
             </Link>
           )
         )}
+
       </div>
+     
     </nav>
   );
 };

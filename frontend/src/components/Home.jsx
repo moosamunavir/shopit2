@@ -39,17 +39,30 @@ const Home = () => {
   return (
     <>
       <MetaData title={"Buy Best Products Online"} />
+
       <div className="row">
         {keyword && (
           <div className="col-6 col-md-3 mt-5">
             <Filters />
           </div>
         )}
+
+        <h3 className="h3 py-3 text-center">
+          It's a compleate E-Commerce Web Page you can bay any products
+        </h3>
+        <div className="col-12 col-md-9 col-lg-4 secondDiv"></div>
+
+        <h4 className="h4 text-center">
+          We have Products like Electronics, Cameras, Laptops, Accessories,
+          Headphones, Food, Books, Sports, Outdoor, Home
+        </h4>
+        <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
+
         <div className={keyword ? "col-6 col-md-9" : "col-12 col-md-12"}>
-          <h1 id="products_heading" className="text-secondary">
+          <h1 id="products_heading" className="text-secondary text-center">
             {keyword
               ? `${data?.products?.length} Products found with keyword: ${keyword}`
-              : "Latest Products"}
+              : "Latest Products...."}
           </h1>
 
           <section id="products" className="mt-2">
