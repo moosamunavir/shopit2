@@ -6,7 +6,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background-color: #17f3e1e1;
+  background-color: #cffaf5e1;
 }
 
 /* Scroll Bar */
@@ -28,7 +28,7 @@ body {
 }
 
 nav {
-  background-color: #232f3e;
+  background-color: #1179f8;
   padding: 1rem 1rem;
 }
 
@@ -594,17 +594,28 @@ footer {
   border-radius: 10px;
   float: left;
 }
+
 .h3 {
-  border-left: 2px solid #000;  
-  border-right: 2px solid #000; 
-  border-bottom: 2px solid #000;
-  border-top: none; 
+  border: none;  
+  background-color: #3042634f;
+   margin-top: 20px;
   border-radius: 30px;
 }
 .h4{
- border-bottom: 2px solid black;
+ border: none;
   border-radius: 30px;
-  padding-top: 20px;
+  background-color: #3042634f;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.checkbox-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto ;
+  white-space: nowrap;
+  width: 100vw;
+  position: relative;
+  padding: 10px 0;
 }
 
 @media (min-width: 992px) {
@@ -618,7 +629,7 @@ footer {
 @media ( max-width: 768px ) {
 
   nav{
-    background-color: #68363b;
+    background-color: #30635c;
   }
   .navbar {
     padding-left: 1px;
@@ -691,7 +702,17 @@ footer {
   .thirdDiv{
     height: 180px;
     background-position: center;
+    margin-bottom: 10px;
   }
-
+  .h3 {
+    border: 1px solid #000;  
+    background-color: #30635c4f;
+     margin-top: 20px;
+    border-radius: 30px;
+  }
+  #products_heading {
+    margin-top: 40px;
+  }
+  
 
 }
