@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MetaData from "./layout/MetaData";
 import { useGetProductsQuery } from "../redux/api/productsApi";
 import ProductItem from "./product/productItem";
@@ -7,9 +7,8 @@ import toast from "react-hot-toast";
 import CustomPagination from "./layout/CustomPagination";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Filters from "./layout/Filters";
-
-import { PRODUCT_CATEGORIES } from "../constants/constants.js";
-
+import { PRODUCT_CATEGORIES } from "../constants/constants.js"; // Import your categories
+import ProductFilter from "./product/ProductFilter.jsx"; // Import the ProductFilter component
 
 const Home = () => {
   const navigate = useNavigate();
@@ -29,46 +28,19 @@ const Home = () => {
   ratings !== null && (params.ratings = ratings);
 
   const { data, isLoading, error, isError } = useGetProductsQuery(params);
+  const [allItems, setAllItems] = useState([]); // Local state for storing all items
+
+  useEffect(() => {
+    if (data && data.products) {
+      setAllItems(data.products); // Store all products fetched
+    }
+  }, [data]);
 
   useEffect(() => {
     if (isError) {
       toast.error(error?.data?.message);
     }
   }, [isError]);
-
-   // handle category rating filters
-
-   const handleClick = (checkbox) => {
-    const checkboxes = document.getElementsByName(checkbox.name);
-
-    checkboxes.forEach((item) => {
-      if (item !== checkbox) item.checked = false;
-    });
-
-    if (checkbox.checked === false) {
-      // Delete filter from query
-      if (searchParams.has(checkbox.name)) {
-        searchParams.delete(checkbox.name);
-        const path = window.location.pathname + "?" + searchParams.toString();
-        navigate(path);
-      }
-    } else {
-      // set new filter value if already there
-      if (searchParams.has(checkbox.name)) {
-        searchParams.set(checkbox.name, checkbox.value);
-      } else {
-        // append new filter
-        searchParams.append(checkbox.name, checkbox.value);
-      }
-      const path = window.location.pathname + "?" + searchParams.toString();
-      navigate(path);
-    }
-  };
-  const defaultCheckHandler = (checkboxType, checkboxValue) => {
-    const value = searchParams.get(checkboxType);
-    if (checkboxValue === value) return true;
-    return false;
-  };
 
   const columnSize = keyword ? 4 : 3;
 
@@ -86,36 +58,27 @@ const Home = () => {
         )}
 
         <p className="h3 py-4 text-center">
-          It's a E-Commerce Web Page. you can bay any products
+          It's an E-Commerce Web Page. You can buy any products.
         </p>
+
         <div className="col-12 col-md-9 col-lg-4 secondDiv"></div>
 
         <p className="h4 text-center">
           We have Products like Electronics, Cameras, Laptops, Accessories,
           Headphones, Food, Books, Sports, Outdoor, Home
         </p>
+
         <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
         <hr />
 
-        <div className="col-12 col-md-9 col-lg-4 checkbox-container">
-        {PRODUCT_CATEGORIES?.map((category) => (
-        <div className="form-check">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            name="category"
-            id="check4"
-            value={category}
-            defaultChecked={defaultCheckHandler("category", category)}
-            onClick={(e) => handleClick(e.target)}
-          />
-          <label className="form-check-label" for="check4">
-            {" "}
-            {category}
-          </label>
+
+
+        {/* Product Filter Section */}
+        <div>
+          {/* Pass ALL_ITEMS and PRODUCT_CATEGORIES to ProductFilter */}
+          <ProductFilter PRODUCT_CATEGORIES={PRODUCT_CATEGORIES} ALL_ITEMS={allItems} />
         </div>
-      ))}  
-        </div>
+
         <div className={keyword ? "col-6 col-md-9" : "col-12 col-md-12"}>
           <h1 id="products_heading" className="text-secondary text-center">
             {keyword
@@ -126,7 +89,7 @@ const Home = () => {
           <section id="products" className="mt-2">
             <div className="row">
               {data?.products?.map((product) => (
-                <ProductItem product={product} columnSize={columnSize} />
+                <ProductItem key={product._id} product={product} columnSize={columnSize} />
               ))}
             </div>
           </section>
@@ -135,6 +98,7 @@ const Home = () => {
             resPerPage={data?.resPerPage}
             filteredProductsCount={data?.filteredProductsCount}
           />
+         
         </div>
       </div>
     </>

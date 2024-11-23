@@ -21,10 +21,12 @@ import OrderDetails from "../order/OrderDetails";
 import Invoice from "../invoice/Invoice";
 import UpdateProfile from "../user/UpdateProfile";
 
+
 const userRoutes = () => {
   return (
     <>
       <Route path="/" element={<Home />} />
+   
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

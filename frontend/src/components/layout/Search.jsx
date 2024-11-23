@@ -14,12 +14,12 @@ const Search = () => {
   };
   return (
     <form onSubmit={submitHandler}>
-      <div className="input-group">
+      <div className="input-group input-grouptwo">
         <input
           type="text"
           id="search_field"
           aria-describedby="search_btn"
-          className="form-control"
+          className="form-control form-controlstwo"
           placeholder="Enter Product Name ..."
           name="keyword"
           value={keyword}
