@@ -82,14 +82,15 @@ const ProductDetails = () => {
     <>
       <MetaData title={`${product?.name} Details`} />
       <div className="row d-flex justify-content-around pt-1">
+      <p className="pname">{product?.name}</p>
         <div className="col-12 col-lg-5 img-fluid" id="product_image">
           <div className="p-1">
             <img
               className="d-block w-100 pImg"
               src={activeImg}
               alt={product?.name}
-              width="340"
-              height="390"
+              width="300"
+              height="300"
             />
           </div>
           <div className="row justify-content-start  pImgAll">
@@ -113,9 +114,7 @@ const ProductDetails = () => {
         </div>
 
         <div className="col-12 col-lg-5 mt-3">
-          <h3>{product?.name}</h3>
-          <p id="product_id">Product # {product?._id}</p>
-
+         
           <hr />
 
           <div className="d-flex">

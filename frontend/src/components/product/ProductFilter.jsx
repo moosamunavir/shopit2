@@ -13,15 +13,14 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
   };
 
   // Reset to show all items
-  const showAllItems = () => {
-    setFilteredItems(ALL_ITEMS);
-  };
+  // const showAllItems = () => {
+  //   setFilteredItems(ALL_ITEMS);
+  // };
 
   return (
     <div>
-      <div className="category-buttons my-3">
+      <div className="category-buttons">
         {/* Button to show all items */}
-      
 
         {/* Map through categories to create filter buttons */}
         {PRODUCT_CATEGORIES.map((category) => (
@@ -35,15 +34,28 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
         ))}
       </div>
 
+      <p className="h3 py-2 text-center">
+        It's an E-Commerce Web Page. You can buy any products.
+      </p>
+      <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
+
       <div className="row">
         {/* Display filtered products */}
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item) => (
-            <ProductItem key={item.id} product={item} columnSize={4} />
-          ))
+
+        {filteredItems.length === 0 ? (
+          <p className="text-center h4 noneedp">No products found.</p>
         ) : (
-         ""
+          <p className="text-center h4">
+            this category has {filteredItems.length} item
+            {filteredItems.length > 1 ? "s" : ""}.
+          </p>
         )}
+
+        {filteredItems.length > 0
+          ? filteredItems.map((item) => (
+              <ProductItem key={item.id} product={item} columnSize={3} />
+            ))
+          : ""}
       </div>
     </div>
   );

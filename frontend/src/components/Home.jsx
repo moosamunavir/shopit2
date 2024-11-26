@@ -51,45 +51,41 @@ const Home = () => {
       <MetaData title={"Buy Best Products Online"} />
 
       <div className="row">
+
+        {/* Product Filter Section */}
+        <div>
+          {/* Pass ALL_ITEMS and PRODUCT_CATEGORIES to ProductFilter */}
+          <ProductFilter
+            PRODUCT_CATEGORIES={PRODUCT_CATEGORIES}
+            ALL_ITEMS={allItems}
+          />
+        </div>
+       
         {keyword && (
           <div className="col-6 col-md-3 mt-5">
             <Filters />
           </div>
         )}
 
-        <p className="h3 py-4 text-center">
-          It's an E-Commerce Web Page. You can buy any products.
-        </p>
+       
 
-        <div className="col-12 col-md-9 col-lg-4 secondDiv"></div>
+       
 
-        <p className="h4 text-center">
-          We have Products like Electronics, Cameras, Laptops, Accessories,
-          Headphones, Food, Books, Sports, Outdoor, Home
-        </p>
-
-        <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
-        <hr />
-
-
-
-        {/* Product Filter Section */}
-        <div>
-          {/* Pass ALL_ITEMS and PRODUCT_CATEGORIES to ProductFilter */}
-          <ProductFilter PRODUCT_CATEGORIES={PRODUCT_CATEGORIES} ALL_ITEMS={allItems} />
-        </div>
-
-        <div className={keyword ? "col-6 col-md-9" : "col-12 col-md-12"}>
-          <h1 id="products_heading" className="text-secondary text-center">
+        <div className={keyword ? "col-6 col-md-9" : "col-12 col-md-12 py-3"}>
+          <h1 id="products_heading" className="text-center newarrivals">
             {keyword
               ? `${data?.products?.length} Products found with keyword: ${keyword}`
-              : "Latest Products...."}
+              : "New Arrivals...."}
           </h1>
 
           <section id="products" className="mt-2">
             <div className="row">
               {data?.products?.map((product) => (
-                <ProductItem key={product._id} product={product} columnSize={columnSize} />
+                <ProductItem
+                  key={product._id}
+                  product={product}
+                  columnSize={columnSize}
+                />
               ))}
             </div>
           </section>
@@ -98,7 +94,6 @@ const Home = () => {
             resPerPage={data?.resPerPage}
             filteredProductsCount={data?.filteredProductsCount}
           />
-         
         </div>
       </div>
     </>

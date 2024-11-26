@@ -7,7 +7,18 @@ import Order from "../models/order.js";
 
 //   1 .create   product =>  /api/v1/products
 export const getProducts = catchAsyncErrors(async (req, res, next) => {
-  const resPerPage = 8;
+
+
+
+
+  
+  const resPerPage = 100;
+  
+  
+  
+  
+  
+  
   const apiFilters = new APIFilters(Product, req.query).search().filters();
   //console.log("req?.user",req?.user);
 
