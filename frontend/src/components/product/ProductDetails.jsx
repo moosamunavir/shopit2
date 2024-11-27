@@ -12,7 +12,6 @@ import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
 import NotFount from "../layout/NotFount";
 
-
 const ProductDetails = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -77,12 +76,27 @@ const ProductDetails = () => {
     return <NotFount />;
   }
 
-
   return (
     <>
       <MetaData title={`${product?.name} Details`} />
       <div className="row d-flex justify-content-around pt-1">
-      <p className="pname">{product?.name}</p>
+        <p className="pname">{product?.name}</p>
+
+        <div className="d-flex">
+          <StarRatings
+            rating={product?.ratings}
+            starRatedColor="#ffb829"
+            numberOfStars={5}
+            name="rating"
+            starDimension="23px"
+            starSpacing="1px"
+          />
+          <span id="no_of_reviews" className="pt-2 ps-2">
+            {" "}
+            ({product?.numOfReviews}
+            {"Reviews "})
+          </span>
+        </div>
         <div className="col-12 col-lg-5 img-fluid" id="product_image">
           <div className="p-1">
             <img
@@ -114,26 +128,6 @@ const ProductDetails = () => {
         </div>
 
         <div className="col-12 col-lg-5 mt-3">
-         
-          <hr />
-
-          <div className="d-flex">
-            <StarRatings
-              rating={product?.ratings}
-              starRatedColor="#ffb829"
-              numberOfStars={5}
-              name="rating"
-              starDimension="23px"
-              starSpacing="1px"
-            />
-            <span id="no_of_reviews" className="pt-2 ps-2">
-              {" "}
-              ({product?.numOfReviews}
-              {"Reviews "})
-            </span>
-          </div>
-          <hr />
-
           <p id="product_price">${product?.price}</p>
           <div className="stockCounter d-inline">
             <span className="btn btn-danger minus" onClick={decreaseQty}>

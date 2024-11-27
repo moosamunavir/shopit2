@@ -24,6 +24,7 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
 
         {/* Map through categories to create filter buttons */}
         {PRODUCT_CATEGORIES.map((category) => (
+          <div className="button-container">
           <button
             key={category}
             className="btn btn-primary me-2 category-button"
@@ -31,12 +32,14 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
           >
             {category}
           </button>
+          </div>
         ))}
       </div>
 
       <p className="h3 py-2 text-center">
-        It's an E-Commerce Web Page. You can buy any products.
+           It's an E-Commerce Web Page <br></br> You can buy any products.
       </p>
+      
       <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
 
       <div className="row">

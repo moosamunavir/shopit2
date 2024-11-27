@@ -7,6 +7,7 @@ body {
   padding: 0px;
   overflow-x: hidden;
   background-color: #ecf5f4e1;
+  scroll-behavior: smooth;
 }
 
 /* Scroll Bar */
@@ -90,6 +91,7 @@ nav {
 
 .card-title a {
   color: #2e2e2e;
+
   text-decoration: none;
 }
 
@@ -574,6 +576,15 @@ footer {
 
 
 
+
+.twosearch {
+  display: none;
+}
+
+
+
+
+
 .noneedp {
   display: none;
 }
@@ -599,6 +610,8 @@ footer {
   overflow-x: auto;
   white-space: nowrap;
   gap: 0.1rem;
+  padding-top: 5px;
+  background-color: #b2dbd677;
   padding-top: 5px;
   
 }
@@ -675,6 +688,9 @@ footer {
   .faIcon {
     display: none;
   }
+  .newArri{
+    display: none;
+  }
  
  
 }
@@ -687,7 +703,10 @@ footer {
   .navbar {
     padding-left: 1px;
     padding-top: 0px ;
-    background-color: #c5d3e6;
+    background-color: #4d3f9b;
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000;
   }
   .input-group {
     display: none;
@@ -715,6 +734,7 @@ footer {
   }
   #cart {
     font-size: 14px;
+    color:#40effc ;
   }
   #cart_count {
     background-color: #febd69;
@@ -791,14 +811,30 @@ footer {
      padding: 10px;
     border-radius: 30px;
     font-size: 17px;
+  
   }
+
+
+
+  .newArri{
+    margin-top: 20px;
+    border-radius: 20px;
+    padding-left: 30px;
+    background-color: #58575738;
+  }
+
   .card {
-    width: 100%;
+    width: 108%;
+  }
+  .card:hover{
+    background-color: rgb(240, 194, 194);
   }
   .card-body {
     padding: 0;
   }
-
+  .card-title {
+    font-size: 13px;
+  }
   
   .card-title a {
     color: #2e2e2e;
@@ -812,32 +848,24 @@ footer {
   }
   
   .card-text {
-    font-size: 1.4rem;
+    font-size: .9rem;
+    margin-top: 1px;
   }
   
   .card-img-top {
-    width: 100px;
-    height: 45px;
+    width: 130px;
+    height: 95px;
+
   }
-  
- .ratings {
-  display: none;
-  height: 1px;
- }
- .star{
-  display: none;
- }
   .crt-text {
     font-size: 8px;
   }
-  #view_btn{
-    font-size: 5px;
+  #view_btn {
+    background-color: #fa9c23;
+    padding: 0.2rem 1rem;
+    color: white;
+    font-size: 12px;
   }
-  
-  #no_of_reviews {
-    display: none;
-  }
-
   #products_heading {
     margin-top: 20px;
   }
@@ -845,6 +873,16 @@ footer {
     padding-top: 10px;
     font-size: 17px;
   }
-  
+  #product_price {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .footerm{
+    background-color: #6cecf55d;
+    
+  }
+  .fam{
+    padding: 15px;
+  }
 
 }

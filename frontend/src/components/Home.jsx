@@ -9,6 +9,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import Filters from "./layout/Filters";
 import { PRODUCT_CATEGORIES } from "../constants/constants.js"; // Import your categories
 import ProductFilter from "./product/ProductFilter.jsx"; // Import the ProductFilter component
+import Search from "./layout/Search.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -51,7 +52,6 @@ const Home = () => {
       <MetaData title={"Buy Best Products Online"} />
 
       <div className="row">
-
         {/* Product Filter Section */}
         <div>
           {/* Pass ALL_ITEMS and PRODUCT_CATEGORIES to ProductFilter */}
@@ -60,24 +60,27 @@ const Home = () => {
             ALL_ITEMS={allItems}
           />
         </div>
-       
+
         {keyword && (
           <div className="col-6 col-md-3 mt-5">
             <Filters />
           </div>
         )}
 
-       
+        <div className="col-6 col-md-9 mt-2 mt-md-0 twosearch">
+          <Search />
+        </div>
 
-       
 
         <div className={keyword ? "col-6 col-md-9" : "col-12 col-md-12 py-3"}>
+          <hr />
           <h1 id="products_heading" className="text-center newarrivals">
             {keyword
               ? `${data?.products?.length} Products found with keyword: ${keyword}`
               : "New Arrivals...."}
           </h1>
-
+          <p className="newArri">New Arrivals ....</p>
+          <hr />
           <section id="products" className="mt-2">
             <div className="row">
               {data?.products?.map((product) => (
