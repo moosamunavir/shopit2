@@ -5,11 +5,15 @@ import ProductItem from "./productItem"; // Ensure you import the ProductItem co
 
 const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
   const [filteredItems, setFilteredItems] = useState(ALL_ITEMS);
+  const [showImages, setShowImages] = useState(true);
+  const [showContent, setShowContent] = useState(true);
 
   // Handle category filtering
   const handleCategoryClick = (category) => {
     const filtered = ALL_ITEMS.filter((item) => item.category === category);
     setFilteredItems(filtered);
+    setShowImages(false);
+    setShowContent(false);
   };
 
   // Reset to show all items
@@ -25,22 +29,31 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
         {/* Map through categories to create filter buttons */}
         {PRODUCT_CATEGORIES.map((category) => (
           <div className="button-container">
-          <button
-            key={category}
-            className="btn btn-primary me-2 category-button"
-            onClick={() => handleCategoryClick(category)}
-          >
-            {category}
-          </button>
+            <button
+              key={category}
+              className="btn btn-primary me-2 category-button"
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </button>
           </div>
         ))}
       </div>
 
-      <p className="h3 py-2 text-center">
-           It's an E-Commerce Web Page <br></br> You can buy any products.
-      </p>
-      
-      <div className="col-12 col-md-9 col-lg-4 thirdDiv"></div>
+      {showContent && (
+        <p className="h3 py-2 text-center">
+          It's an E-Commerce Web Page <br></br> You can buy any products.
+        </p>
+      )}
+
+      {showImages && (
+        <div className="col-12 col-md-9 col-lg-4 secondDiv images-container">
+          <img className="thirdDiv" />
+          <img className="fourthDiv" />
+          <img className="thirdDiv" />
+          <img className="fourthDiv" />
+        </div>
+      )}
 
       <div className="row">
         {/* Display filtered products */}

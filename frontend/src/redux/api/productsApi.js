@@ -24,6 +24,9 @@ export const productApi = createApi({
       query: (id) => `/products/${id}`,
       providesTags: ['Product'],
     }),
+    getRelatedProducts: builder.query({
+      query:(category) => `products?category=${category}`,
+    }),
     submitReview: builder.mutation({
       query(body) {
         return {
@@ -119,4 +122,5 @@ export const {
   useUploadProductImagesMutation,
   useLazyGetProductReviewsQuery,
   useDeleteReviewMutation,
+  useGetRelatedProductsQuery,
 } = productApi;

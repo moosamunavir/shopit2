@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import MetaData from "../layout/MetaData";
 
 import { useParams } from "react-router-dom";
-import { useGetProductDetailsQuery } from "../../redux/api/productsApi";
+import {
+  useGetProductDetailsQuery,
+  useGetRelatedProductsQuery,
+} from "../../redux/api/productsApi";
 import Loader from "../layout/Loader";
 import StarRatings from "react-star-ratings";
 import toast from "react-hot-toast";
@@ -11,6 +14,7 @@ import { setCartItem } from "../../redux/features/cartSlice";
 import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
 import NotFount from "../layout/NotFount";
+import ProductCard from "./ProductCart";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -24,6 +28,11 @@ const ProductDetails = () => {
   );
 
   const product = data?.product;
+  const { data: relatedProducts, isLoading: relatedLoading } =
+    useGetRelatedProductsQuery(product?.category, {
+      skip: !product?.category,
+    });
+
   const { isAuthenticated } = useSelector((state) => state.auth);
   useEffect(() => {
     setActiveImg(
@@ -186,6 +195,25 @@ const ProductDetails = () => {
       {product?.reviews?.length > 0 && (
         <ListReviews reviews={product?.reviews} />
       )}
+
+      {/* Related products */}
+      <div className="related-products mt-3">
+        <h2 className="text-center">Similar Products</h2>
+        {relatedLoading ? (
+          <Loader />
+        ) : (
+          <div className="row">
+            {relatedProducts?.products?.map((relatedProduct) => (
+              <div
+                key={relatedProduct._id}
+                className="col-6 col-md-4 col-lg-3 mb-4"
+              >
+                <ProductCard product={relatedProduct} />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </>
   );
 };

@@ -574,12 +574,19 @@ footer {
 
 /*   my cssssssss   */  
 
-
+.footerm{
+  background-color: #6cecf55d;
+  
+}
+.fam{
+  padding: 15px;
+}
 
 
 .twosearch {
   display: none;
 }
+
 
 
 
@@ -632,10 +639,20 @@ footer {
 .iconDiv {
   display: none;
 }
+
+
+#images-container{
+  display: flex;
+  gap: 10px;
+}
+.hidden {
+  display: none;
+}
+
+
 .secondDiv {
   width: 98%;
-  height: 500px;
-  background-image: url('../public/images/shopping.jpg');
+  height: 200px;
   background-position: center;
   margin-top: 20px;
   font-family: 'Courier New', Courier, monospace;
@@ -643,14 +660,50 @@ footer {
   float: left;
 }
 .thirdDiv{
-  width: 98%;
-  height: 150px;
+  width: 25%;
+  height: 190px;
   background-image: url('../public/images/images.jpeg');
   background-position: center;
   margin-top: 5px;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 10px;
-  float: left;
+  animation: hideAfterTenSeconds 5s forwards;
+}
+.fourthDiv{
+  width: 25%;
+  height: 190px;
+  background-image: url('../public/images/images.jpeg');
+  background-position: center;
+  margin-top: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  animation: hideBeforeTenSeconds 5s forwards;
+}
+
+@keyframes hideAfterTenSeconds {
+  0% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hideBeforeTenSeconds {
+  0% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .h3 {
@@ -677,7 +730,7 @@ footer {
 }
 .logoPic {
   height: 35px;
-  background-color: #000;
+  background-color: #044ae0e1;
   border-radius: 10px;
 }
 #userFullName {
@@ -691,7 +744,9 @@ footer {
   .newArri{
     display: none;
   }
- 
+  .hr{
+    display: none;
+  }
  
 }
 
@@ -716,7 +771,7 @@ footer {
   }
   .logoPic {
     height: 35px;
-    background-color: #000000a8;
+    background-color: #4043ecea;
   
   }
   .topdiv {
@@ -788,9 +843,14 @@ footer {
 
   /* home page  */
   
-
+ 
 
   .thirdDiv{
+    height: 180px;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+  .fourthDiv{
     height: 180px;
     background-position: center;
     margin-bottom: 10px;
@@ -884,5 +944,25 @@ footer {
   .fam{
     padding: 15px;
   }
-
+  .cartname {
+    font-size: 15px;
+  }
+  .cartpname {
+    font-size: 14px;
+  }
+  #card_item_price {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+  .pricediv{
+    padding-top: 1px;
+  }
+  .plusminus {
+    padding-top: 0px;
+  }
+  .hr{
+    margin: 5px;
+    
+  }
+ 
 }

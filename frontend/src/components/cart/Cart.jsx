@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setCartItem, removeCartItem } from "../../redux/features/cartSlice";
 
-
 const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -44,16 +43,16 @@ const Cart = () => {
   const checkOutHandler = () => {
     navigate("/shipping");
   };
- 
+
   return (
     <>
       <MetaData title={"your Cart"} />
       <div className="container" id="mine">
         {cartItems?.length === 0 ? (
-          <h2 className="mt-5">Your Cart is Empty</h2>
+          <h2 className="mt-2">Your Cart is Empty</h2>
         ) : (
           <>
-            <h2 className="mt-5">
+            <h2 className="mt-2 cartname">
               Your Cart: <b>{cartItems?.length} Items</b>
             </h2>
 
@@ -64,7 +63,7 @@ const Cart = () => {
                     <hr />
                     <div className="cart-item" data-key="product1">
                       <div className="row">
-                        <div className="col-4 col-lg-3">
+                        <div className="col-3 col-lg-3">
                           <img
                             src={item?.image}
                             alt="Laptop"
@@ -72,20 +71,25 @@ const Cart = () => {
                             width="115"
                           />
                         </div>
-
-                        <div className="col-5 col-lg-3">
-                          <Link to={`/product/${item?.product}`}>
+                        <hr className="hr" />
+                        <div className="col-3 col-lg-3">
+                          <Link
+                            className="cartpname"
+                            to={`/product/${item?.product}`}
+                          >
                             {" "}
                             {item?.name}{" "}
                           </Link>
                         </div>
-                        <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                       
+                        <div className="col-4 col-lg-2 mt-4 mt-lg-0 pricediv">
                           <p id="card_item_price">${item?.price}</p>
                         </div>
-                        <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                        <hr className="hr"/>
+                        <div className="col-8 col-lg-3 mt-4 mt-lg-0 plusminus">
                           <div className="stockCounter d-inline">
                             <span
-                              className="btn btn-danger minus"
+                              className="btn btn-danger minus btntwo"
                               onClick={() => decreaseQty(item, item?.quantity)}
                             >
                               {" "}
@@ -93,12 +97,12 @@ const Cart = () => {
                             </span>
                             <input
                               type="number"
-                              className="form-control count d-inline"
+                              className="form-control count d-inline btntwo"
                               value={item?.quantity}
                               readonly
                             />
                             <span
-                              className="btn btn-primary plus"
+                              className="btn btn-primary plus btntwo"
                               onClick={() => increaseQty(item, item?.quantity)}
                             >
                               {" "}
@@ -120,9 +124,9 @@ const Cart = () => {
                 ))}
               </div>
 
-              <div className="col-12 col-lg-3 my-4 ">
+              <div className="col-12 col-lg-3 my-1 ">
                 <div id="order_summary">
-                  <h4>Order Summary</h4>
+                  <h5>Order Summary</h5>
                   <hr />
                   <p>
                     Units:{" "}
