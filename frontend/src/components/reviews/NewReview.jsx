@@ -44,7 +44,7 @@ const NewReview = ({ productId }) => {
           </button>
         )}
 
-        <div className="row mt-2 mb-5">
+        <div className="row mt-2 mb-5 reviewadd">
           <div className="rating w-50">
             <div
               className="modal fade"

@@ -7,6 +7,8 @@ body {
   padding: 0px;
   overflow-x: hidden;
   background-color: #ecf5f4e1;
+  
+
   scroll-behavior: smooth;
 }
 
@@ -35,6 +37,7 @@ nav {
 
 .navbar {
   padding: 0.1rem 1rem;
+  height: 58px;
 }
 
 .dropdown {
@@ -87,7 +90,18 @@ nav {
 
 .card {
   height: 100%;
+  border: none;
+  box-shadow: 0 2px 4px rgb(131, 130, 130);
+  transition: all 0.3s ease-in-out;
+ 
 }
+
+.card:hover {
+  border-color: #b5d1f0; /* Change to your preferred hover border color */
+  box-shadow: 0 4px 8px rgb(41, 106, 117); /* Deeper shadow on hover */
+  transform: translatey(-10px);
+}
+
 
 .card-title a {
   color: #2e2e2e;
@@ -109,8 +123,14 @@ nav {
 }
 
 .card-img-top {
-  width: 200px;
-  height: 150px;
+  width: 240px;
+  height: 180px;
+
+}
+
+.card-img-top:hover {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(41, 106, 117);
 }
 
 .ratings {
@@ -662,12 +682,12 @@ footer {
 .thirdDiv{
   width: 25%;
   height: 190px;
-  background-image: url('../public/images/images.jpeg');
+  background-image: url('../public/images/Shopit_design.jpeg');
   background-position: center;
   margin-top: 5px;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 10px;
-  animation: hideAfterTenSeconds 5s forwards;
+  animation: hideAfterTenSeconds 2s forwards;
 }
 .fourthDiv{
   width: 25%;
@@ -677,17 +697,36 @@ footer {
   margin-top: 5px;
   font-family: 'Courier New', Courier, monospace;
   border-radius: 10px;
-  animation: hideBeforeTenSeconds 5s forwards;
+  animation: hideBeforeTenSeconds 4s forwards;
+}
+.fifthDiv{
+  width: 25%;
+  height: 190px;
+  background-image: url('../public/images/images.jpeg');
+  background-position: center;
+  margin-top: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  border: none;
+  overflow: auto;
+  animation: hideAfterTenSeconds 6s forwards;
+}
+.sixthDiv{
+  width: 25%;
+  height: 190px;
+  background-image: url('../public/images/Shopit_design.jpeg');
+  background-position: center;
+  margin-top: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  animation: hideBeforeTenSeconds 7s forwards;
+}
+.reviewadd {
+  height: 20px;
 }
 
 @keyframes hideAfterTenSeconds {
   0% {
-    opacity: 0;
-  }
-  55% {
-    opacity: 1;
-  }
-  85% {
     opacity: 0;
   }
   100% {
@@ -696,9 +735,6 @@ footer {
 }
 @keyframes hideBeforeTenSeconds {
   0% {
-    opacity: 1;
-  }
-  55% {
     opacity: 0;
   }
   100% {
@@ -757,6 +793,7 @@ footer {
   }
   .navbar {
     padding-left: 1px;
+    height: 50px;
     padding-top: 0px ;
     background-color: #4d3f9b;
     position: sticky;
@@ -771,12 +808,12 @@ footer {
   }
   .logoPic {
     height: 35px;
-    background-color: #4043ecea;
+    background-color: #3c3c5fea;
   
   }
   .topdiv {
     width: 30%;
-    margin-top: 15px;
+    margin-top: 10px;
   }
   .searchDiv {
     display: none;
@@ -800,6 +837,7 @@ footer {
   }
   .cartMaincart {
     width: 199px;
+    
 
   }
   .dropdown {
@@ -815,11 +853,11 @@ footer {
   }
  
   #product_image {
-    margin-top: .9rem;
+    margin-top: .3rem;
   }
   .pImg {
     width: 100px;
-    height: 200px;
+    height: 240px;
     border-radius: 10px;
   }
   .pImgAll {
@@ -855,6 +893,16 @@ footer {
     background-position: center;
     margin-bottom: 10px;
   }
+  .fifthDiv{
+    height: 180px;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+  .sixthDiv{
+    height: 180px;
+    background-position: center;
+    margin-bottom: 10px;
+  }
   .h3 {
     background-color: #30635c4f;
      margin-top: 20px;
@@ -884,11 +932,9 @@ footer {
   }
 
   .card {
-    width: 108%;
+    width: 100%;
   }
-  .card:hover{
-    background-color: rgb(240, 194, 194);
-  }
+ 
   .card-body {
     padding: 0;
   }
@@ -920,17 +966,23 @@ footer {
   .crt-text {
     font-size: 8px;
   }
+
+
+
+
+
   #view_btn {
     background-color: #fa9c23;
     padding: 0.2rem 1rem;
     color: white;
     font-size: 12px;
+    margin-bottom: 5px;
+    width: 120px;
   }
   #products_heading {
     margin-top: 20px;
   }
   .pname{
-    padding-top: 10px;
     font-size: 17px;
   }
   #product_price {

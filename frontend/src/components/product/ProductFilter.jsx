@@ -50,8 +50,8 @@ const ProductFilter = ({ PRODUCT_CATEGORIES, ALL_ITEMS }) => {
         <div className="col-12 col-md-9 col-lg-4 secondDiv images-container">
           <img className="thirdDiv" />
           <img className="fourthDiv" />
-          <img className="thirdDiv" />
-          <img className="fourthDiv" />
+          <img className="fifthDiv" />
+          <img className="sixthDiv" />
         </div>
       )}
 

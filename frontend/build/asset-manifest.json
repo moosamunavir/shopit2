@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.bcc5cec2.css",
-    "main.js": "/static/js/main.2e151afb.js",
+    "main.css": "/static/css/main.752b223a.css",
+    "main.js": "/static/js/main.83ebd565.js",
     "static/js/213.7f77f7fe.chunk.js": "/static/js/213.7f77f7fe.chunk.js",
     "static/js/455.8fb15ae2.chunk.js": "/static/js/455.8fb15ae2.chunk.js",
+    "static/media/Shopit_design.jpeg": "/static/media/Shopit_design.5175b345d615222b9bce.jpeg",
     "index.html": "/index.html",
-    "main.bcc5cec2.css.map": "/static/css/main.bcc5cec2.css.map",
-    "main.2e151afb.js.map": "/static/js/main.2e151afb.js.map",
+    "main.752b223a.css.map": "/static/css/main.752b223a.css.map",
+    "main.83ebd565.js.map": "/static/js/main.83ebd565.js.map",
     "213.7f77f7fe.chunk.js.map": "/static/js/213.7f77f7fe.chunk.js.map",
     "455.8fb15ae2.chunk.js.map": "/static/js/455.8fb15ae2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcc5cec2.css",
-    "static/js/main.2e151afb.js"
+    "static/css/main.752b223a.css",
+    "static/js/main.83ebd565.js"
   ]
 }

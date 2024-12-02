@@ -13,7 +13,7 @@ const ListReviews = ({ reviews }) => {
         {reviews?.map((review) => (
           <div key={review?._id} className="review-card my-3">
             <div className="row">
-              <div className="col-1">
+              <div className="col-3">
                 <img
                   src={
                     review?.user?.avatar
@@ -26,7 +26,7 @@ const ListReviews = ({ reviews }) => {
                   className="rounded-circle"
                 />
               </div>
-              <div className="col-11">
+              <div className="col-9">
               <StarRatings
               rating={review?.rating}
               starRatedColor="#ffb829"

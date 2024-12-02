@@ -54,6 +54,13 @@ const Home = () => {
     
 
       <div className="row">
+
+
+      
+
+
+
+
         {/* Product Filter Section */}
         <div>
           {/* Pass ALL_ITEMS and PRODUCT_CATEGORIES to ProductFilter */}

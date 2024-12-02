@@ -14,7 +14,7 @@ import { setCartItem } from "../../redux/features/cartSlice";
 import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
 import NotFount from "../layout/NotFount";
-import ProductCard from "./ProductCart";
+import ProductCard from "./ProductCard";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -34,6 +34,9 @@ const ProductDetails = () => {
     });
 
   const { isAuthenticated } = useSelector((state) => state.auth);
+
+  
+
   useEffect(() => {
     setActiveImg(
       product?.images[0]
@@ -89,7 +92,7 @@ const ProductDetails = () => {
     <>
       <MetaData title={`${product?.name} Details`} />
       <div className="row d-flex justify-content-around pt-1">
-        <p className="pname">{product?.name}</p>
+        <p className="mt-1">{product?.name}</p>
 
         <div className="d-flex">
           <StarRatings
