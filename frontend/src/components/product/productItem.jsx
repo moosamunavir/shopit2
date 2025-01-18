@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons";
 
 // import StarRatings from "react-star-ratings";
 
 const ProductItem = ({ product, columnSize }) => {
-
-
   return (
     <div className={`col-6 col-md-6 col-lg-${columnSize} mt-3`}>
       <div className="card pt-2 rounded">
@@ -22,7 +22,12 @@ const ProductItem = ({ product, columnSize }) => {
           <h5 className="card-title product-title">
             <Link to={`/product/${product?._id}`}>{product?.name}</Link>
           </h5>
-          <p className="card-text mt-2">${product?.price}</p>
+          <p className="card-text mt-2">
+           
+            <FontAwesomeIcon icon={faRupeeSign} />:
+            {product?.price}
+          </p>
+
           <Link
             to={`/product/${product?._id}`}
             id="view_btn"

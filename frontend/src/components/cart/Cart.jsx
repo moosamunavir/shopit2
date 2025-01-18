@@ -3,6 +3,8 @@ import MetaData from "../layout/MetaData";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setCartItem, removeCartItem } from "../../redux/features/cartSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -83,7 +85,7 @@ const Cart = () => {
                         </div>
                        
                         <div className="col-4 col-lg-2 mt-4 mt-lg-0 pricediv">
-                          <p id="card_item_price">${item?.price}</p>
+                          <p id="card_item_price"> <FontAwesomeIcon icon={faRupeeSign} /> : {item?.price}</p>
                         </div>
                         <hr className="hr"/>
                         <div className="col-8 col-lg-3 mt-4 mt-lg-0 plusminus">
@@ -141,7 +143,7 @@ const Cart = () => {
                   <p>
                     Est. total:{" "}
                     <span className="order-summary-values">
-                      ${" "}
+                       <FontAwesomeIcon icon={faRupeeSign} /> : {" "}
                       {cartItems
                         ?.reduce(
                           (acc, item) => acc + item?.quantity * item?.price,

@@ -9,4 +9,5 @@ export const PRODUCT_CATEGORIES = [
   "Sports",
   "Outdoor",
   "Home",
+  "dress",
 ];

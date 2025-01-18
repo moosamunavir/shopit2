@@ -12,7 +12,7 @@ export const stripeCheckoutSession = catchAsyncErrors(
     const line_items = body?.orderItems?.map((item) => {
       return {
         price_data: {
-          currency: "usd",
+          currency: "inr",
           product_data: {
             name: item?.name,
             images: [item?.image],
@@ -29,8 +29,8 @@ export const stripeCheckoutSession = catchAsyncErrors(
 
     const shipping_rate =
       body?.itemsPrice >= 200
-        ? "shr_1QCrxvDWVJ38H7vplamsEqVX"
-        : "shr_1QCT6yDWVJ38H7vpnkq3RvUu";
+        ? "shr_1Qi4yWDWVJ38H7vpmpbbF0mg"
+        : "shr_1Qi4xcDWVJ38H7vp5MU5Q0xX";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],

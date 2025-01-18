@@ -12,7 +12,7 @@ export const getProducts = catchAsyncErrors(async (req, res, next) => {
 
 
   
-  const resPerPage = 100;
+  const resPerPage = 10;
   
   
   

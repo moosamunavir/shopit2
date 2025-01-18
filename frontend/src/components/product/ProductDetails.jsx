@@ -15,6 +15,8 @@ import NewReview from "../reviews/NewReview";
 import ListReviews from "../reviews/ListReviews";
 import NotFount from "../layout/NotFount";
 import ProductCard from "./ProductCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRupeeSign } from "@fortawesome/free-solid-svg-icons";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -34,8 +36,6 @@ const ProductDetails = () => {
     });
 
   const { isAuthenticated } = useSelector((state) => state.auth);
-
-  
 
   useEffect(() => {
     setActiveImg(
@@ -140,7 +140,9 @@ const ProductDetails = () => {
         </div>
 
         <div className="col-12 col-lg-5 mt-3">
-          <p id="product_price">${product?.price}</p>
+          <p id="product_price">
+            <FontAwesomeIcon icon={faRupeeSign} /> : {product?.price}
+          </p>
           <div className="stockCounter d-inline">
             <span className="btn btn-danger minus" onClick={decreaseQty}>
               -
